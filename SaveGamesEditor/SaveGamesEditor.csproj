@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0A198D4E-DC74-4977-ACCF-BBF72930244E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SaveGamesEditor</RootNamespace>
+    <AssemblyName>SaveGamesEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.1.6643.41644, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WeifenLuo.WinFormsUI.Docking.2.1.0\lib\net20\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clases\AvailableItemsConverter.cs" />
+    <Compile Include="Clases\Objects\InventoryItem.cs" />
+    <Compile Include="Clases\Objects\InventoryNote.cs" />
+    <Compile Include="Clases\SphinxSaveGame_Header.cs" />
+    <Compile Include="Clases\AvailableMapsConverter.cs" />
+    <Compile Include="Clases\SphinxSaveGame_TripleMummy.cs" />
+    <Compile Include="Custom Controls\ListView_ColumnSortingClick.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Custom Controls\ListView_ColumnSortingClick.Designer.cs">
+      <DependentUpon>ListView_ColumnSortingClick.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Custom Controls\UserControl_HashCodesSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Custom Controls\UserControl_HashCodesSelector.Designer.cs">
+      <DependentUpon>UserControl_HashCodesSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Custom Controls\UserControl_Inventory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Custom Controls\UserControl_Inventory.Designer.cs">
+      <DependentUpon>UserControl_Inventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Custom Controls\UserControl_NotesEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Custom Controls\UserControl_NotesEditor.Designer.cs">
+      <DependentUpon>UserControl_NotesEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Main.Designer.cs">
+      <DependentUpon>Frm_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\Objects\Objective.cs" />
+    <Compile Include="HashTables.cs" />
+    <Compile Include="Panels\Frm_Level.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\Frm_Level.Designer.cs">
+      <DependentUpon>Frm_Level.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\Frm_Programmable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\Frm_Programmable.Designer.cs">
+      <DependentUpon>Frm_Programmable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\Frm_TripleMummy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\Frm_TripleMummy.Designer.cs">
+      <DependentUpon>Frm_TripleMummy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Clases\SphinxSaveGame.cs" />
+    <Compile Include="Reader\BytesFunctions.cs" />
+    <Compile Include="Reader\SphinxSaveGamesReader.cs" />
+    <Compile Include="Sub Forms\Frm_BehaviourFlags.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sub Forms\Frm_BehaviourFlags.Designer.cs">
+      <DependentUpon>Frm_BehaviourFlags.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\Frm_FileHeader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\Frm_FileHeader.Designer.cs">
+      <DependentUpon>Frm_FileHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\Frm_Inventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\Frm_Inventory.Designer.cs">
+      <DependentUpon>Frm_Inventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\Frm_Notes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\Frm_Notes.Designer.cs">
+      <DependentUpon>Frm_Notes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\Frm_Objectives.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\Frm_Objectives.Designer.cs">
+      <DependentUpon>Frm_Objectives.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sub Forms\Frm_ModifyInventoryItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sub Forms\Frm_ModifyInventoryItem.Designer.cs">
+      <DependentUpon>Frm_ModifyInventoryItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sub Forms\Frm_ModifyObjectives.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sub Forms\Frm_ModifyObjectives.Designer.cs">
+      <DependentUpon>Frm_ModifyObjectives.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Writer\WriteSaveGameFile.cs" />
+    <EmbeddedResource Include="Custom Controls\UserControl_HashCodesSelector.resx">
+      <DependentUpon>UserControl_HashCodesSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Custom Controls\UserControl_Inventory.resx">
+      <DependentUpon>UserControl_Inventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Custom Controls\UserControl_NotesEditor.resx">
+      <DependentUpon>UserControl_NotesEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Main.resx">
+      <DependentUpon>Frm_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\Frm_Level.resx">
+      <DependentUpon>Frm_Level.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\Frm_Programmable.resx">
+      <DependentUpon>Frm_Programmable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\Frm_TripleMummy.resx">
+      <DependentUpon>Frm_TripleMummy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Sub Forms\Frm_BehaviourFlags.resx">
+      <DependentUpon>Frm_BehaviourFlags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\Frm_FileHeader.resx">
+      <DependentUpon>Frm_FileHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\Frm_Inventory.resx">
+      <DependentUpon>Frm_Inventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\Frm_Notes.resx">
+      <DependentUpon>Frm_Notes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\Frm_Objectives.resx">
+      <DependentUpon>Frm_Objectives.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sub Forms\Frm_ModifyInventoryItem.resx">
+      <DependentUpon>Frm_ModifyInventoryItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sub Forms\Frm_ModifyObjectives.resx">
+      <DependentUpon>Frm_ModifyObjectives.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
